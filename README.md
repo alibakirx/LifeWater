@@ -1,40 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+## Sanat Galerisi Projesi Raporu
 
-## Getting Started
+### 1. Giriş
 
-First, run the development server:
+**Projenin Amacı**Bu proje, yalnızca HTML ve CSS kullanılarak dahi etkileyici ve sanatsal işler çıkarılabileceğini göstermek amacıyla tasarlanmıştır. Galeride, generative art teknikleri kullanılarak oluşturulmuş, etkileşimli ve 3D sanat eserleri yer alacaktır. Projenin amacı, modern web teknolojilerini yaratıcı şekilde kullanarak, sanatsal ifadeyi dijital bir platforma taşımaktır.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Teknolojilerin Seçimi**Projenin temel teknolojileri olan **Next.js** ve **pure CSS**, performans, esneklik ve sadelik sağlamak için tercih edilmiştir. Zaman zaman **TailwindCSS**, **Framer Motion** ve diğer teknolojiler, proje gereksinimlerine göre çeşitli özellikler sunmak için kullanılacaktır.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Teknik Detaylar
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+**Kullanılan Teknolojiler**
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- **Next.js**: Projenin temel yapısını oluşturan React tabanlı bir framework.
+- **Pure CSS**: Sanat eserlerinin ve galerinin 3D tasarımında temel teknoloji.
+- **TailwindCSS**: Hızlı ve etkili stil oluşturmak için.
+- **Framer Motion**: Eserlerde ve galeri tasarımında **animasyonlar** ve **geçiş efektleri** için.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+**3D CSS Kullanımı**Sanat eserleri ve galerinin 3D görünümü, CSS’in `transform` ve `perspective` özellikleri kullanılarak oluşturulacaktır. Scroll tabanlı gezinti sırasında kullanıcı deneyimini iyileştirmek için **parallax etkiler** ve **dinamik animasyonlar** uygulanacaktır. **Framer Motion**, bu animasyonların daha akıcı ve etkileyici bir şekilde sunulmasını sağlayacaktır.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Proje Tasarımı ve Yapısı
 
-## Learn More
+**Kullanıcı Arayüzü ve Deneyim Hedefleri**Kullanıcılar, galeriyi bir sanat sergisi gibi deneyimleyecektir. Scroll ile galeri içerisinde gezinirken, eserlerin etkileşimli ve hareketli unsurlarını inceleyebileceklerdir.
 
-To learn more about Next.js, take a look at the following resources:
+**Galeri Düzeni**Galeri, yatay veya dikey scroll ile gezilebilen bir düzen üzerine kurulacaktır. Her sanat eseri kendi özel alanında sunulacak ve CSS’in özellikleriyle 3D görünümler kazandırılacaktır.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+**Generative Art Teknikleri**Eserler, sadece HTML ve CSS ile generative art teknikleri kullanılarak tasarlanacaktır. Örneğin, **animasyonlu gradientler**, **geometrik şekiller** ve **dinamik transformasyonlar** bu tekniklerin bir parçası olacaktır.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 4. Geliştirme Süreci
 
-## Deploy on Vercel
+**Kodlama Aşamaları ve Zaman Çizelgesi**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Araştırma ve Planlama**: 1 hafta
+- **Galeri Çatısını Oluşturma**: 2 hafta
+- **Sanat Eserlerinin Tasarımı**: 3 hafta
+- **Etkileşimlerin Eklenmesi**: 2 hafta
+- **Test ve Optimizasyon**: 1 hafta
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+**Karşılaşılan Zorluklar ve Çözümler**
+
+- **Zorluk**: CSS ile karmaşık 3D tasarımlar yapmak.  **Çözüm**: CSS `transform` ve `perspective` özelliklerini etkin bir şekilde kullanmak.
+- **Zorluk**: Performans problemleri.  **Çözüm**: Kodun optimize edilmesi ve yalın yapılar kullanılması.
+
+### 5. Sonuç ve Değerlendirme
+
+Proje, yalnızca HTML ve CSS kullanılarak etkileyici sanat eserleri oluşturulabileceğini başarıyla göstermiştir. Generative art teknikleri sayesinde, dijital sanatın sınırsız yaratıcılığı keşfedilmiş ve scroll tabanlı etkileşimsel bir galeri deneyimi sunulmuştur. Bu proje, gelecekteki dijital sanat uygulamaları için ilham kaynağı olma potansiyeline sahiptir.
+
+### 6. Kaynakça
+
+- **CSS Transform ve 3D Teknikleri**: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
+- **Next.js Resmi Belgeleri**: [Next.js Docs](https://nextjs.org/docs)
+- **Framer Motion Belgeleri**: [Framer Motion Docs](https://www.framer.com/motion/)
+- **Generative Art Kaynakları**: [Creative Coding](https://creative-coding.com)
