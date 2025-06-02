@@ -56,6 +56,9 @@ const LifeWater: React.FC = () => {
         // Create canvas at full window size
         p.createCanvas(p.windowWidth, p.windowHeight);
         
+        // Set background first
+        p.background(16, 33, 51);
+        
         // Adjust cell size based on screen size
         cellSize = calculateCellSize();
         
@@ -97,11 +100,11 @@ const LifeWater: React.FC = () => {
           
           const creature: Creature = {
             position: p.createVector(p.random(p.width), p.random(p.height)),
-            velocity: p5.Vector.random2D().mult(p.random(0.5, 2)),
+            velocity: p.createVector(p.random(-2, 2), p.random(-2, 2)),
             acceleration: p.createVector(0, 0),
             maxSpeed: isLargeFish ? p.random(0.8, 2) : p.random(1.5, 3),
             size: isLargeFish ? p.random(8, 12) : p.random(3, 7),
-            color: isLargeFish ? p.color(10, 10, 10, 255) : p.color(0, 0, 0, 230)
+            color: isLargeFish ? p.color(255, 215, 0, 255) : p.color(255, 255, 255, 230)
           };
           creatures.push(creature);
         }
@@ -155,10 +158,10 @@ const LifeWater: React.FC = () => {
         for (let i = 0; i < creatures.length; i++) {
           if (i !== index) {
             const other = creatures[i];
-            const d = p5.Vector.dist(creature.position, other.position);
+            const d = p.dist(creature.position.x, creature.position.y, other.position.x, other.position.y);
             
             if (d < desiredSeparation) {
-              const diff = p5.Vector.sub(creature.position, other.position);
+              const diff = p.createVector(creature.position.x - other.position.x, creature.position.y - other.position.y);
               diff.normalize();
               diff.div(d);  // Weight by distance
               steer.add(diff);
@@ -189,7 +192,7 @@ const LifeWater: React.FC = () => {
         for (let i = 0; i < creatures.length; i++) {
           if (i !== index) {
             const other = creatures[i];
-            const d = p5.Vector.dist(creature.position, other.position);
+            const d = p.dist(creature.position.x, creature.position.y, other.position.x, other.position.y);
             
             if (d < neighborDist) {
               sum.add(other.velocity);
@@ -217,7 +220,7 @@ const LifeWater: React.FC = () => {
         for (let i = 0; i < creatures.length; i++) {
           if (i !== index) {
             const other = creatures[i];
-            const d = p5.Vector.dist(creature.position, other.position);
+            const d = p.dist(creature.position.x, creature.position.y, other.position.x, other.position.y);
             
             if (d < neighborDist) {
               sum.add(other.position);
@@ -235,11 +238,11 @@ const LifeWater: React.FC = () => {
       }
       
       function seek(creature: Creature, target: any): any {
-        const desired = p5.Vector.sub(target, creature.position);
+        const desired = p.createVector(target.x - creature.position.x, target.y - creature.position.y);
         desired.normalize();
         desired.mult(creature.maxSpeed);
         
-        const steer = p5.Vector.sub(desired, creature.velocity);
+        const steer = p.createVector(desired.x - creature.velocity.x, desired.y - creature.velocity.y);
         steer.limit(0.3);
         return steer;
       }
@@ -454,6 +457,7 @@ const LifeWater: React.FC = () => {
       };
     };
 
+    // Store p5 instance for cleanup
     const p5Instance = new p5(sketch, canvasRef.current || undefined);
     return () => {
       p5Instance.remove();
@@ -471,7 +475,8 @@ const LifeWater: React.FC = () => {
       width: '100vw', 
       height: '100vh',
       margin: 0,
-      padding: 0
+      padding: 0,
+      background: '#102133' // Dark blue background
     }}>
       <div ref={canvasRef} style={{ 
         width: '100%', 
