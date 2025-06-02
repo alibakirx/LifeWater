@@ -7,5 +7,11 @@ const LifeWater = dynamic(() => import('../components/LifeWater'), {
 });
 
 export default function Home() {
-  return <LifeWater />;
+  return (
+    <div className="min-h-screen bg-gray-900">
+      <main>
+        <LifeWater />
+      </main>
+    </div>
+  );
 } 
